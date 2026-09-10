@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { SalesTableView } from "../components/SalesTable/src/SalesTable";
+import React from "react";
 
 const sampleSalesData = JSON.stringify([
   {
@@ -44,6 +45,13 @@ const meta = {
       description: "Sales records as a JSON string",
     },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ width: "1200px" }}>
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof SalesTableView>;
 
 export default meta;
