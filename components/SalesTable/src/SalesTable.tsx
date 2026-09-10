@@ -1,108 +1,153 @@
 import * as React from "react";
+import {
+  makeStyles,
+  tokens,
+  Table,
+  TableHeader,
+  TableHeaderCell,
+  TableBody,
+  TableRow,
+  TableCell,
+} from "@fluentui/react-components";
+import { appTokens } from "../../../shared/theme";
+
+const useStyles = makeStyles({
+  root: {
+    padding: appTokens.spacing.lg,
+  },
+
+  title: {
+    fontSize: appTokens.typography.pageTitle,
+  },
+
+  tableContainer: {
+    width: "100%",
+    overflowX: "auto",
+    borderRadius: tokens.borderRadiusMedium,
+    border: `1px solid ${tokens.colorNeutralStroke2}`,
+  },
+
+  table: {
+    width: "100%",
+  },
+
+  headerCell: {
+    fontWeight: 600,
+    backgroundColor: tokens.colorNeutralBackground3,
+  },
+
+  cell: {
+    whiteSpace: "nowrap",
+  },
+});
 
 export interface SalesRecord {
-    id: number;
-    product: string;
-    region: string;
-    sales: number;
-    sale_date?: string;
+  id: number;
+  product: string;
+  region: string;
+  sales: number;
+  sale_date?: string;
 }
 
 export interface ISalesTableProps {
-    data: string;
+  data: string;
 }
 
 function isSalesRecord(value: unknown): value is SalesRecord {
-    if (typeof value !== "object" || value === null) {
-        return false;
-    }
+  if (typeof value !== "object" || value === null) {
+    return false;
+  }
 
-    const record = value as Record<string, unknown>;
+  const record = value as Record<string, unknown>;
 
-    return (
-        typeof record.id === "number" &&
-        typeof record.product === "string" &&
-        typeof record.region === "string" &&
-        typeof record.sales === "number" &&
-        (
-            record.sale_date === undefined ||
-            typeof record.sale_date === "string"
-        )
-    );
+  return (
+    typeof record.id === "number" &&
+    typeof record.product === "string" &&
+    typeof record.region === "string" &&
+    typeof record.sales === "number" &&
+    (record.sale_date === undefined || typeof record.sale_date === "string")
+  );
 }
 
 function parseSalesData(data: string): SalesRecord[] {
-    if (!data) {
-        return [];
-    }
+  if (!data) {
+    return [];
+  }
 
-    const parsed: unknown = JSON.parse(data) as unknown;
+  const parsed: unknown = JSON.parse(data) as unknown;
 
-    if (!Array.isArray(parsed)) {
-        return [];
-    }
+  if (!Array.isArray(parsed)) {
+    return [];
+  }
 
-    return parsed.filter(isSalesRecord);
+  return parsed.filter(isSalesRecord);
 }
 
 export const SalesTableView: React.FC<ISalesTableProps> = ({ data }) => {
-    let records: SalesRecord[] = [];
+  let records: SalesRecord[] = [];
+  const styles = useStyles();
 
-    try {
-        records = parseSalesData(data);
-    } catch {
-        return (
-            <div style={{ padding: "16px" }}>
-                Invalid sales data.
-            </div>
-        );
-    }
+  try {
+    records = parseSalesData(data);
+  } catch {
+    return <div style={{ padding: "16px" }}>Invalid sales data.</div>;
+  }
 
-    if (!records.length) {
-        return (
-            <div style={{ padding: "16px" }}>
-                No sales data available.
-            </div>
-        );
-    }
+  if (!records.length) {
+    return <div style={{ padding: "16px" }}>No sales data available.</div>;
+  }
 
-    return (
-        <div
-            style={{
-                width: "100%",
-                overflowX: "auto"
-            }}
-        >
-            <h2>Sales Dashboard</h2>
+  return (
+    <div className={styles.root}>
+      <h2 className={styles.title}>Sales Dashboard</h2>
 
-            <table
-                style={{
-                    width: "100%",
-                    borderCollapse: "collapse"
-                }}
-            >
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Product</th>
-                        <th>Region</th>
-                        <th>Sales</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
+      <div className={styles.tableContainer}>
+        <Table className={styles.table}>
+          <TableHeader>
+            <TableRow>
+              <TableHeaderCell className={styles.headerCell}>
+                ID
+              </TableHeaderCell>
 
-                <tbody>
-                    {records.map((record) => (
-                        <tr key={record.id}>
-                            <td>{record.id}</td>
-                            <td>{record.product}</td>
-                            <td>{record.region}</td>
-                            <td>${record.sales.toFixed(2)}</td>
-                            <td>{record.sale_date || "N/A"}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
-    );
+              <TableHeaderCell className={styles.headerCell}>
+                Product
+              </TableHeaderCell>
+
+              <TableHeaderCell className={styles.headerCell}>
+                Region
+              </TableHeaderCell>
+
+              <TableHeaderCell className={styles.headerCell}>
+                Sales
+              </TableHeaderCell>
+
+              <TableHeaderCell className={styles.headerCell}>
+                Date
+              </TableHeaderCell>
+            </TableRow>
+          </TableHeader>
+
+          <TableBody>
+            {records.map((record) => (
+              <TableRow key={record.id}>
+                <TableCell className={styles.cell}>{record.id}</TableCell>
+
+                <TableCell className={styles.cell}>{record.product}</TableCell>
+
+                <TableCell className={styles.cell}>{record.region}</TableCell>
+
+                <TableCell className={styles.cell}>
+                  ${record.sales.toFixed(2)}
+                </TableCell>
+
+                <TableCell className={styles.cell}>
+                  {record.sale_date || "N/A"}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
+    </div>
+  );
 };

@@ -3,28 +3,28 @@
   "version": "0.0.1",
   "description": "Multi-component PCF monorepo for Power Apps",
   "private": true,
-
   "workspaces": [
     "components/*",
     "shared"
   ],
-
   "scripts": {
-  "build": "npm run build --workspaces",
-  "build:all": "npm run build --workspaces --if-present",
-
-  "build:sales-table": "npm run build -w @pcf/sales-table",
-  "build:sales-chart": "npm run build -w @pcf/sales-chart",
-  "build:sales-kpi": "npm run build -w @pcf/sales-kpi",
-
-  "lint": "npm run lint --workspaces --if-present",
-  "test": "npm run test --workspaces --if-present",
-  "clean": "npm run clean --workspaces --if-present",
-
-  "dev:sales-table": "npm run dev -w @pcf/sales-table"
-},
-
+    "build": "npm run build --workspaces",
+    "build:all": "npm run build --workspaces --if-present",
+    "build:sales-table": "npm run build -w @pcf/sales-table",
+    "build:sales-chart": "npm run build -w @pcf/sales-chart",
+    "build:sales-kpi": "npm run build -w @pcf/sales-kpi",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "clean": "npm run clean --workspaces --if-present",
+    "dev:sales-table": "npm run dev -w @pcf/sales-table",
+    "storybook": "storybook dev -p 6006",
+    "storybook:build": "storybook build"
+  },
   "devDependencies": {
-    "concurrently": "^9.0.0"
+    "@storybook/addon-a11y": "^8.6.18",
+    "@storybook/react-webpack5": "^8.6.18",
+    "@storybook/test": "^8.6.18",
+    "concurrently": "^9.0.0",
+    "storybook": "^8.6.18"
   }
 }

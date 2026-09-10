@@ -1,5 +1,6 @@
 import { IInputs, IOutputs } from "../generated/ManifestTypes";
 import { SalesTableView, ISalesTableProps } from "./SalesTable";
+import { AppThemeProvider } from "../../../shared/theme";
 import * as React from "react";
 
 export class SalesTable implements ComponentFramework.ReactControl<IInputs, IOutputs> {
@@ -26,8 +27,12 @@ export class SalesTable implements ComponentFramework.ReactControl<IInputs, IOut
         };
 
         return React.createElement(
-            SalesTableView,
-            props
+            AppThemeProvider,
+            null,
+            React.createElement(
+                SalesTableView,
+                props
+            )
         );
     }
 
