@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="Demo" constructor="SalesTable" version="0.0.1" display-name-key="SalesTable" description-key="Sales Table PCF Component" control-type="virtual" >
+    <external-service-usage enabled="false">
+    </external-service-usage>
+    <property
+      name="salesData"
+      display-name-key="Sales Data"
+      description-key="JSON sales data from Power Apps"
+      of-type="SingleLine.Text"
+      usage="bound"
+      required="true"
+    />
+    <resources>
+      <code path="src/index.ts" order="1"/>
+      <platform-library name="React" version="16.14.0" />
+      <platform-library name="Fluent" version="9.4.0" />
+    </resources>
+  </control>
+</manifest>

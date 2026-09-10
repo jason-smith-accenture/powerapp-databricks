@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml version="9.2.23052.239" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmliveSolutionPackager" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SolutionManifest>
+    <UniqueName>PCFComponentsMonorepo</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="PCF Components Monorepo" languagecode="1033"/>
+    </LocalizedNames>
+    <Descriptions/>
+    <Version>1.0.0.0</Version>
+    <Managed>0</Managed>
+    <Publisher>
+      <UniqueName>Demo</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="Demo" languagecode="1033"/>
+      </LocalizedNames>
+      <Descriptions/>
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <CustomizationPrefix>demo</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>41375</CustomizationOptionValuePrefix>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="66" schemaName="demo_Demo.SalesTable" behavior="0"/>
+      <RootComponent type="66" schemaName="demo_Demo.SalesChart" behavior="0"/>
+      <RootComponent type="66" schemaName="demo_Demo.SalesKPI" behavior="0"/>
+    </RootComponents>
+    <MissingDependencies/>
+  </SolutionManifest>
+</ImportExportXml>
