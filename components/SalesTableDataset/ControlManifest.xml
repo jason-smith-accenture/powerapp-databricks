@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <manifest>
-  <control namespace="Demo" constructor="SalesChart" version="0.0.1" display-name-key="SalesChart" description-key="Sales Chart PCF Component" control-type="virtual" api-version="1.3.18">
+  <control namespace="Demo" constructor="SalesTableDataset" version="0.0.1" display-name-key="SalesTableDataset" description-key="Sales Table Dataset PCF Component" control-type="virtual" api-version="1.3.18">
     <external-service-usage enabled="false"/>
     <property name="salesData" display-name-key="Sales Data" description-key="JSON sales data from Power Apps" of-type="SingleLine.Text" usage="bound" required="true"/>
     <resources>

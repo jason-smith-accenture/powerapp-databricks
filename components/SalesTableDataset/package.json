@@ -1,15 +1,15 @@
 {
-  "name": "@pcf/sales-chart",
+  "name": "@pcf/sales-table-dataset",
   "version": "0.0.1",
-  "description": "Sales Chart PCF Component",
+  "description": "Sales Table Dataset PCF Component",
   "scripts": {
     "build": "pcf-scripts build",
     "clean": "pcf-scripts clean",
     "rebuild": "pcf-scripts rebuild",
     "lint": "pcf-scripts lint",
     "test": "jest",
-
-    "start:harness": "../../node_modules/.bin/pcf-start --watch --codePath ./out/controls"
+    "start:harness": "../../node_modules/.bin/pcf-start --watch --codePath ./out/controls",
+    "dev": "npm run build && npm run start:harness"
   },
   "dependencies": {
     "react": "16.14.0",

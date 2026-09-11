@@ -15,12 +15,8 @@
       <FileName>/Controls/demo_Demo.SalesTable/ControlManifest.xml</FileName>
     </CustomControl>
     <CustomControl>
-      <Name>demo_Demo.SalesChart</Name>
-      <FileName>/Controls/demo_Demo.SalesChart/ControlManifest.xml</FileName>
-    </CustomControl>
-    <CustomControl>
-      <Name>demo_Demo.SalesKPI</Name>
-      <FileName>/Controls/demo_Demo.SalesKPI/ControlManifest.xml</FileName>
+      <Name>demo_Demo.SalesTableDataset</Name>
+      <FileName>/Controls/demo_Demo.SalesTableDataset/ControlManifest.xml</FileName>
     </CustomControl>
   </CustomControls>
   <SolutionPluginAssemblies/>

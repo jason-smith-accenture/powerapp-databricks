@@ -20,8 +20,7 @@
     </Publisher>
     <RootComponents>
       <RootComponent type="66" schemaName="demo_Demo.SalesTable" behavior="0"/>
-      <RootComponent type="66" schemaName="demo_Demo.SalesChart" behavior="0"/>
-      <RootComponent type="66" schemaName="demo_Demo.SalesKPI" behavior="0"/>
+      <RootComponent type="66" schemaName="demo_Demo.SalesTableDataset" behavior="0"/>
     </RootComponents>
     <MissingDependencies/>
   </SolutionManifest>
