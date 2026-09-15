@@ -8,13 +8,11 @@ export const useStyles = makeStyles({
     borderRadius: "25px",
     maxWidth: "500px",
   },
-
   title: {
     fontSize: appTokens.typography.pageTitle,
     color: "#ffffff",
     marginTop: 0,
   },
-
   field: {
     marginBottom: appTokens.spacing.md,
 
@@ -22,7 +20,6 @@ export const useStyles = makeStyles({
       color: "#ffffff !important",
     },
   },
-
   submitButton: {
     marginTop: appTokens.spacing.md,
     backgroundColor: "#3cd7d9",

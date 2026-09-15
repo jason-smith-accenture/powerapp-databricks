@@ -1,7 +1,5 @@
 import * as React from "react";
 import {
-  makeStyles,
-  tokens,
   Table,
   TableHeader,
   TableHeaderCell,
@@ -9,37 +7,7 @@ import {
   TableRow,
   TableCell,
 } from "@fluentui/react-components";
-import { appTokens } from "../../../shared/theme";
-
-const useStyles = makeStyles({
-  root: {
-    padding: appTokens.spacing.lg,
-  },
-
-  title: {
-    fontSize: appTokens.typography.pageTitle,
-  },
-
-  tableContainer: {
-    width: "100%",
-    overflowX: "auto",
-    borderRadius: tokens.borderRadiusMedium,
-    border: `1px solid ${tokens.colorNeutralStroke2}`,
-  },
-
-  table: {
-    width: "100%",
-  },
-
-  headerCell: {
-    fontWeight: 600,
-    backgroundColor: tokens.colorNeutralBackground3,
-  },
-
-  cell: {
-    whiteSpace: "nowrap",
-  },
-});
+import { useStyles } from "./styles";
 
 export interface SalesRecord {
   id: number;
@@ -51,36 +19,6 @@ export interface SalesRecord {
 
 export interface ISalesTableProps {
   records: SalesRecord[];
-}
-
-function isSalesRecord(value: unknown): value is SalesRecord {
-  if (typeof value !== "object" || value === null) {
-    return false;
-  }
-
-  const record = value as Record<string, unknown>;
-
-  return (
-    typeof record.id === "number" &&
-    typeof record.product === "string" &&
-    typeof record.region === "string" &&
-    typeof record.sales === "number" &&
-    (record.sale_date === undefined || typeof record.sale_date === "string")
-  );
-}
-
-function parseSalesData(data: string): SalesRecord[] {
-  if (!data) {
-    return [];
-  }
-
-  const parsed: unknown = JSON.parse(data) as unknown;
-
-  if (!Array.isArray(parsed)) {
-    return [];
-  }
-
-  return parsed.filter(isSalesRecord);
 }
 
 export const SalesTableView: React.FC<ISalesTableProps> = ({ records }) => {
