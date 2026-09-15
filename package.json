@@ -20,7 +20,8 @@
     "dev:sales-form": "npm run dev -w @pcf/sales-form",
     "dev:sales-table-dataset": "npm run dev -w @pcf/sales-table-dataset",
     "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build"
+    "storybook:build": "storybook build",
+    "solution-build": "npm run build:all && ./create-solution.sh"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^8.6.18",

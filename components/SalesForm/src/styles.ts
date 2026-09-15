@@ -3,7 +3,7 @@ import { appTokens } from "../../../shared/theme";
 
 export const useStyles = makeStyles({
   root: {
-    padding: appTokens.spacing.lg,
+    padding: appTokens.spacing.xxl,
     backgroundColor: "#0e1b2d",
     borderRadius: "25px",
     maxWidth: "500px",

@@ -1,13 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import { SalesForm } from "../components/SalesForm/src/SalesForm";
+import React from "react";
 
 const meta: Meta<typeof SalesForm> = {
   title: "PCF/SalesForm",
   component: SalesForm,
 
   parameters: {
-    layout: "centered",
+    layout: "padded",
   },
 
   argTypes: {
@@ -19,6 +20,13 @@ const meta: Meta<typeof SalesForm> = {
       description: "Optional data used to pre-populate the form",
     },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ width: "1200px" }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export default meta;
