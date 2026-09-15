@@ -18,6 +18,10 @@
       <Name>demo_Demo.SalesTableDataset</Name>
       <FileName>/Controls/demo_Demo.SalesTableDataset/ControlManifest.xml</FileName>
     </CustomControl>
+    <CustomControl>
+      <Name>demo_Demo.SalesForm</Name>
+      <FileName>/Controls/demo_Demo.SalesForm/ControlManifest.xml</FileName>
+    </CustomControl>
   </CustomControls>
   <SolutionPluginAssemblies/>
   <EntityDataProviders/>

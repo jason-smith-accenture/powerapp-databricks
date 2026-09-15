@@ -21,6 +21,7 @@
     <RootComponents>
       <RootComponent type="66" schemaName="demo_Demo.SalesTable" behavior="0"/>
       <RootComponent type="66" schemaName="demo_Demo.SalesTableDataset" behavior="0"/>
+      <RootComponent type="66" schemaName="demo_Demo.SalesForm" behavior="0"/>
     </RootComponents>
     <MissingDependencies/>
   </SolutionManifest>

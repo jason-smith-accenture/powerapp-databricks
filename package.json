@@ -11,11 +11,13 @@
     "build": "npm run build --workspaces",
     "build:all": "npm run build --workspaces --if-present",
     "build:sales-table": "npm run build -w @pcf/sales-table",
+    "build:sales-form": "npm run build -w @pcf/sales-form",
     "build:sales-table-dataset": "npm run build -w @pcf/sales-table-dataset",
     "lint": "npm run lint --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
     "clean": "npm run clean --workspaces --if-present",
     "dev:sales-table": "npm run dev -w @pcf/sales-table",
+    "dev:sales-form": "npm run dev -w @pcf/sales-form",
     "dev:sales-table-dataset": "npm run dev -w @pcf/sales-table-dataset",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build"
@@ -23,7 +25,7 @@
   "devDependencies": {
     "@storybook/addon-a11y": "^8.6.18",
     "@storybook/react-webpack5": "^8.6.18",
-    "@storybook/test": "^8.6.18",
+    "@storybook/testing-library": "^0.2.1",
     "@types/jest": "^29.5.14",
     "concurrently": "^9.0.0",
     "jest": "^29.7.0",
