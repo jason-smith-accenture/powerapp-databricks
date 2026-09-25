@@ -15,6 +15,10 @@
       <FileName>/Controls/demo_Demo.SalesTable/ControlManifest.xml</FileName>
     </CustomControl>
     <CustomControl>
+      <Name>demo_Demo.SalesFilter</Name>
+      <FileName>/Controls/demo_Demo.SalesFilter/ControlManifest.xml</FileName>
+    </CustomControl>
+    <CustomControl>
       <Name>demo_Demo.SalesTableDataset</Name>
       <FileName>/Controls/demo_Demo.SalesTableDataset/ControlManifest.xml</FileName>
     </CustomControl>

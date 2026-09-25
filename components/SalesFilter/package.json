@@ -1,0 +1,30 @@
+{
+  "name": "@pcf/sales-filter",
+  "version": "0.0.1",
+  "description": "Sales Filter PCF Component",
+  "scripts": {
+    "build": "pcf-scripts build",
+    "clean": "pcf-scripts clean",
+    "rebuild": "pcf-scripts rebuild",
+    "lint": "pcf-scripts lint",
+    "test": "jest",
+    "start:harness": "../../node_modules/.bin/pcf-start --watch --codePath ./out/controls",
+    "dev": "npm run build && npm run start:harness"
+  },
+  "dependencies": {
+    "@fluentui/react-components": "9.68.0",
+    "react": "16.14.0",
+    "react-dom": "16.14.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.5.0",
+    "@testing-library/react": "^12.1.5",
+    "@types/jest": "^30.0.0",
+    "@types/powerapps-component-framework": "^1.3.16",
+    "@types/react": "16.14.14",
+    "@types/react-dom": "16.9.25",
+    "pcf-scripts": "^1.51.1",
+    "pcf-start": "^1",
+    "typescript": "^5.8.3"
+  }
+}
