@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="Demo" constructor="SalesFilter" version="0.0.2" display-name-key="SalesFilter" description-key="Sales Filter PCF Component" control-type="virtual" >
+  <control namespace="Demo" constructor="SalesFilter" version="0.0.4" display-name-key="SalesFilter" description-key="Sales Filter PCF Component" control-type="virtual" >
     <external-service-usage enabled="false">
     </external-service-usage>
     <property
-      name="FilterData"
+      name="filterData"
       display-name-key="Filter Data"
       description-key="JSON representation of the applied filters"
       of-type="SingleLine.Text"
