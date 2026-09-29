@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="Demo" constructor="SalesFilter" version="0.0.2" display-name-key="SalesFilter" description-key="Sales Filter PCF Component" control-type="virtual" >
+    <external-service-usage enabled="false">
+    </external-service-usage>
+    <property
+      name="FilterData"
+      display-name-key="Filter Data"
+      description-key="JSON representation of the applied filters"
+      of-type="SingleLine.Text"
+      usage="output"
+      required="false"
+    />
+    <resources>
+      <code path="src/index.ts" order="1"/>
+      <platform-library name="React" version="16.14.0" />
+      <platform-library name="Fluent" version="9.4.0" />
+    </resources>
+  </control>
+</manifest>

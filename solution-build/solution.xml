@@ -6,7 +6,7 @@
       <LocalizedName description="PCF Components Monorepo" languagecode="1033"/>
     </LocalizedNames>
     <Descriptions/>
-    <Version>1.0.0.0</Version>
+    <Version>1.0.0.3</Version>
     <Managed>0</Managed>
     <Publisher>
       <UniqueName>Demo</UniqueName>
@@ -20,7 +20,7 @@
     </Publisher>
     <RootComponents>
       <RootComponent type="66" schemaName="demo_Demo.SalesTable" behavior="0"/>
-      <RootComponent type="66" schemaName="demo_Demo.SalesTableDataset" behavior="0"/>
+      <RootComponent type="66" schemaName="demo_Demo.SalesFilter" behavior="0"/>
     </RootComponents>
     <MissingDependencies/>
   </SolutionManifest>
