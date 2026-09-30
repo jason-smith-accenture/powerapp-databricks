@@ -39,7 +39,6 @@ export const useStyles = makeStyles({
 
   fields: {
     display: "grid",
-
     gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
 
     gap: appTokens.spacing.md,
@@ -47,6 +46,10 @@ export const useStyles = makeStyles({
 
   field: {
     minWidth: 0,
+  },
+
+  label: {
+    color: "white",
   },
 
   actions: {

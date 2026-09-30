@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 
-import { Button, Field, Input, Select } from "@fluentui/react-components";
+import {
+  Button,
+  Field,
+  Input,
+  Label,
+  Select,
+} from "@fluentui/react-components";
 
 import type { FilterField, FilterProps, FilterValues } from "./types";
 
@@ -52,7 +58,10 @@ export const Filter: React.FC<FilterProps> = ({
       case "text":
         return (
           <div key={field.id} className={styles.field}>
-            <Field label={field.label}>
+            <Field>
+              <Label htmlFor={field.id} className={styles.label}>
+                {field.label}
+              </Label>
               <Input
                 value={value}
                 placeholder={field.placeholder}
@@ -68,7 +77,10 @@ export const Filter: React.FC<FilterProps> = ({
       case "select":
         return (
           <div key={field.id} className={styles.field}>
-            <Field label={field.label}>
+            <Field>
+              <Label htmlFor={field.id} className={styles.label}>
+                {field.label}
+              </Label>
               <Select
                 value={value}
                 disabled={field.disabled}
@@ -93,7 +105,10 @@ export const Filter: React.FC<FilterProps> = ({
       case "date":
         return (
           <div key={field.id} className={styles.field}>
-            <Field label={field.label}>
+            <Field>
+              <Label htmlFor={field.id} className={styles.label}>
+                {field.label}
+              </Label>
               <Input
                 type="date"
                 value={value}
