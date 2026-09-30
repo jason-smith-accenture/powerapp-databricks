@@ -1,21 +1,15 @@
 import * as React from "react";
 
-import {
+import { IInputs, IOutputs } from "../generated/ManifestTypes";
+
+import { Filter } from "./Filter";
+
+import type { FilterValues } from "./types";
+
+export class SalesFilter implements ComponentFramework.ReactControl<
   IInputs,
-  IOutputs,
-} from "../generated/ManifestTypes";
-
-import {
-  Filter,
-} from "./Filter";
-
-import type {
-  FilterValues,
-} from "./types";
-
-export class SalesFilter
-  implements ComponentFramework.ReactControl<IInputs, IOutputs>
-{
+  IOutputs
+> {
   private notifyOutputChanged: () => void;
 
   private filters: FilterValues = {};
@@ -38,70 +32,73 @@ export class SalesFilter
     return React.createElement(Filter, {
       fields: [
         {
-          id: "product",
-          label: "Product",
+          id: "bank",
+          label: "Bank",
           type: "select",
-          placeholder: "All products",
+          placeholder: "All banks",
           options: [
             {
-              label: "Mortgage",
-              value: "mortgage",
+              label: "Bank A",
+              value: "Bank A",
             },
             {
-              label: "Savings",
-              value: "savings",
-            },
-            {
-              label: "Credit Card",
-              value: "credit-card",
+              label: "Bank B",
+              value: "Bank B",
             },
           ],
         },
         {
-          id: "region",
-          label: "Region",
+          id: "asset",
+          label: "Asset",
           type: "select",
-          placeholder: "All regions",
+          placeholder: "All assets",
           options: [
             {
-              label: "North",
-              value: "north",
+              label: "Mortgage",
+              value: "Mortgage",
             },
             {
-              label: "South",
-              value: "south",
+              label: "Savings",
+              value: "Savings",
             },
             {
-              label: "East",
-              value: "east",
-            },
-            {
-              label: "West",
-              value: "west",
+              label: "Credit Card",
+              value: "Credit Card",
             },
           ],
         },
         {
           id: "dateFrom",
-          label: "From",
+          label: "Submission date from",
           type: "date",
         },
         {
           id: "dateTo",
-          label: "To",
+          label: "Submission date to",
           type: "date",
         },
       ],
 
       onChange: (filters) => {
         this.filters = filters;
+      },
+
+      onApply: (filters) => {
+        this.filters = filters;
+        this.notifyOutputChanged();
+      },
+
+      onClear: () => {
+        this.filters = {};
         this.notifyOutputChanged();
       },
     });
   }
 
   public getOutputs(): IOutputs {
-    return {};
+    return {
+      filterData: JSON.stringify(this.filters),
+    };
   }
 
   public destroy(): void {

@@ -3,44 +3,43 @@ import { SalesTableView, ISalesTableProps } from "./SalesTable";
 import { AppThemeProvider } from "../../../shared/theme";
 import * as React from "react";
 
-export class SalesTable implements ComponentFramework.ReactControl<IInputs, IOutputs> {
-    private notifyOutputChanged: () => void;
+export class SalesTable implements ComponentFramework.ReactControl<
+  IInputs,
+  IOutputs
+> {
+  private notifyOutputChanged: () => void;
 
-    constructor() {
-        // Empty
-    }
+  constructor() {
+    this.notifyOutputChanged = () => {};
+  }
 
-    public init(
-        context: ComponentFramework.Context<IInputs>,
-        notifyOutputChanged: () => void,
-        state: ComponentFramework.Dictionary
-    ): void {
-        this.notifyOutputChanged = notifyOutputChanged;
-    }
+  public init(
+    context: ComponentFramework.Context<IInputs>,
+    notifyOutputChanged: () => void,
+    state: ComponentFramework.Dictionary,
+  ): void {
+    this.notifyOutputChanged = notifyOutputChanged;
+  }
 
-    public updateView(
-        context: ComponentFramework.Context<IInputs>
-    ): React.ReactElement {
+  public updateView(
+    context: ComponentFramework.Context<IInputs>,
+  ): React.ReactElement {
+    const props: ISalesTableProps = {
+      data: context.parameters.salesData.raw ?? "",
+    };
 
-        const props: ISalesTableProps = {
-            data: context.parameters.salesData.raw ?? ""
-        };
+    return React.createElement(
+      AppThemeProvider,
+      null,
+      React.createElement(SalesTableView, props),
+    );
+  }
 
-        return React.createElement(
-            AppThemeProvider,
-            null,
-            React.createElement(
-                SalesTableView,
-                props
-            )
-        );
-    }
+  public getOutputs(): IOutputs {
+    return {};
+  }
 
-    public getOutputs(): IOutputs {
-        return {};
-    }
-
-    public destroy(): void {
-        // Cleanup if required
-    }
+  public destroy(): void {
+    // Cleanup if required
+  }
 }

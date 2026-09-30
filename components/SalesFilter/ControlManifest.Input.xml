@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="Demo" constructor="SalesFilter" version="0.0.4" display-name-key="SalesFilter" description-key="Sales Filter PCF Component" control-type="virtual" >
+  <control namespace="Demo" constructor="SalesFilter" version="0.0.5" display-name-key="SalesFilter" description-key="Sales Filter PCF Component" control-type="virtual" >
     <external-service-usage enabled="false">
     </external-service-usage>
     <property
